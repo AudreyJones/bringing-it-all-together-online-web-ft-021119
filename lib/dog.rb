@@ -85,7 +85,7 @@ class Dog
     if !dog.empty? #Create Dog Object, but do not push to database (which would create a duplicate!).
       dog_id = dog.flatten[0]
       dog = Dog.new(args)
-      binding.pry
+      # binding.pry
     else
       dog = self.create(args) # Dog is neither in the db nor is an object, so create a row in the database too!
     end
