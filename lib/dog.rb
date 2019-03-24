@@ -85,6 +85,7 @@ class Dog
     if !dog.empty?
       dog_id = dog.flatten[0]
       dog = Dog.new(args)
+binding.pry
       Dog.id = dog_id
        # Dog does not have an id (which should be 1) #<Dog:0x0000000001a50608 @breed="cockapoo", @name="teddy">
 binding.pry
