@@ -82,15 +82,14 @@ class Dog
   def self.find_or_create_by(name:, breed:)
     args = {name: name,breed: breed}
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
-    if !dog.empty? #Create Dog Object, but do not push to database (which would create a duplicate!).
+    if !dog.empty? 
       dog_id = dog.flatten[0]
-      dog = Dog.new(args)
+      dog = Dog.new(args) # Dog does not have an id (which should be 1) #<Dog:0x0000000001a50608 @breed="cockapoo", @name="teddy">
       # binding.pry
     else
-      dog = self.create(args) # Dog is neither in the db nor is an object, so create a row in the database too!
-binding.pry
+      dog = self.create(args) # Dog(<Dog OBJ @breed="irish setter", @id=3, @name="teddy">)has an id = 3
     end
 # binding.pry
-    dog
+    dog #<Dog:0x0000000001a50608 @breed="cockapoo", @name="teddy">
   end
 end
