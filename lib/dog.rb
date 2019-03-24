@@ -88,6 +88,7 @@ class Dog
       # binding.pry
     else
       dog = self.create(args) # Dog(<Dog OBJ @breed="irish setter", @id=3, @name="teddy">)has an id = 3
+# binding.pry
     end
 # binding.pry
     dog #<Dog:0x0000000001a50608 @breed="cockapoo", @name="teddy">
