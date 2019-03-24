@@ -84,7 +84,7 @@ class Dog
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
     # binding.pry
     if !dog.empty? #Create Dog Object, but do not push to database (which would create a duplicate!).
-      dog_id = dog[0]
+      dog_id = dog.flatten[0]
       binding.pry
       dog = Dog.new(args)
     else
