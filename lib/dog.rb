@@ -88,7 +88,7 @@ class Dog
     else
       dog = self.create(args) # Dog is neither in the db nor is an object, so create a row in the database too!
     end
-
+binding.pry
     dog
   end
 end
